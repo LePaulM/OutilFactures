@@ -1,0 +1,13 @@
+from docx import Document
+
+document = Document()
+document.add_heading('This is the title', 0)
+p = document.add_paragraph('And this is text ')
+p.add_run('some bold text').bold = True
+p.add_run('and italic text.').italic = True
+#0: Left alignment, 1: Center, 2: Right, 3: Justified
+p.alignment = 1  
+#this will set the line spacing in the paragraph to 1.5 lines
+p.paragraph_format.line_spacing = 1.5 
+document.save('C:/Users/pmian/output.docx')
+
